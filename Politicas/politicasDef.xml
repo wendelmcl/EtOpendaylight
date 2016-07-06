@@ -1,0 +1,18 @@
+<?xml version="1.0" ?>
+<policies>
+	<policy id="default1">
+		<cliente>cliente2</cliente>
+		<protocolo>http</protocolo>
+		<gateway>gateway1</gateway>
+	</policy>
+	<policy id="default2">
+		<cliente>cliente3</cliente>
+		<protocolo>pop</protocolo>
+		<gateway>gateway1</gateway>
+	</policy>
+	<policy id="default3">
+		<cliente>cliente3</cliente>
+		<protocolo>smtp</protocolo>
+		<gateway>gateway2</gateway>
+	</policy>
+</policies>

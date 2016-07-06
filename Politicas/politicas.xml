@@ -1,0 +1,38 @@
+<?xml version="1.0" ?>
+<policies>
+	<policy id="1">
+		<cliente>cliente1</cliente>
+		<protocolo>http</protocolo>
+		<gateway>gateway1</gateway>
+	</policy>
+	<policy id="2">
+		<cliente>cliente2</cliente>
+		<protocolo>ftp</protocolo>
+		<gateway>gateway2</gateway>
+	</policy>
+	<policy id="3">
+		<cliente>cliente3</cliente>
+		<protocolo>ssh</protocolo>
+		<gateway>gateway1</gateway>
+	</policy>
+	<policy id="4">
+		<cliente>cliente1</cliente>
+		<protocolo>telnet</protocolo>
+		<gateway>gateway1</gateway>
+	</policy>
+	<policy id="5">
+		<cliente>cliente3</cliente>
+		<protocolo>imap</protocolo>
+		<gateway>gateway2</gateway>
+	</policy>
+	<policy id="6">
+		<cliente>cliente2</cliente>
+		<protocolo>pop</protocolo>
+		<gateway>gateway1</gateway>
+	</policy>
+	<policy id="7">
+		<cliente>cliente3</cliente>
+		<protocolo>smtp</protocolo>
+		<gateway>gateway1</gateway>
+	</policy>
+</policies>
