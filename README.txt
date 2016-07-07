@@ -60,7 +60,7 @@ feature:install odl-netconf-mdsal
 feature:install odl-openflowplugin-all
 feature:install odl-netconf-connector-all
 
-Para acessar o painel: http://<endereço ip>:8181/index.html
+Para acessar a interface WEB: http://<endereço ip>:8181/index.html
 
 usuário e senha padrão: admin
 
@@ -134,14 +134,14 @@ ovs-ofctl dump-tables <nome da bridge>
 sudo iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
 
 ############### CONFIGURAÇÃO DAS MÁQUINAS VIRTUAIS ###############
-CONTROLADOR/OPENVSWITCH
+#CONTROLADOR/OPENVSWITCH
 auto eth0
 iface eth0 inet static
 address 192.168.2.2
 netmask 255.255.255.0
 
 
-GATEWAY 1
+#GATEWAY 1
 auto eth0
 iface eth0 inet dhcp
 
@@ -151,7 +151,7 @@ address 192.168.2.3
 netmask 255.255.255.0
 
 
-GATEWAY2
+#GATEWAY2
 auto eth0
 iface eth0 inet dhcp
 
@@ -161,7 +161,7 @@ address 192.168.2.4
 netmask 255.255.255.0
 
 
-CLIENTE 1
+#CLIENTE 1
 auto eth0
 iface eth0 inet static
 address 192.168.2.5
@@ -169,7 +169,7 @@ netmask 255.255.255.0
 gateway 192.168.2.2
 dns-nameservers 8.8.8.8
 
-CLIENTE 2
+#CLIENTE 2
 auto eth0
 iface eth0 inet static
 address 192.168.2.6
@@ -177,7 +177,7 @@ netmask 255.255.255.0
 gateway 192.168.2.2
 dns-nameservers 8.8.8.8
 
-CLIENTE 3
+#CLIENTE 3
 auto eth0
 iface eth0 inet static
 address 192.168.2.7
