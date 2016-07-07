@@ -60,7 +60,7 @@ feature:install odl-netconf-mdsal
 feature:install odl-openflowplugin-all
 feature:install odl-netconf-connector-all
 
-Para acessar a interface WEB: http://<endereço ip>:8181/index.html
+Para acessar a interface WEB do controlador: http://<endereço ip>:8181/index.html
 
 usuário e senha padrão: admin
 
