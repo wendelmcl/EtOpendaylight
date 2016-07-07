@@ -133,7 +133,42 @@ ovs-ofctl dump-tables <nome da bridge>
 #COMANDO NECESSÁRIO PARA AS MÁQUINAS GATEWAYS
 sudo iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
 
-############### CONFIGURAÇÃO DAS MÁQUINAS VIRTUAIS ###############
+############### INSTALAÇÃO DO ZABBIX ###############
+
+#Fazer download do instalador:
+wget http://repo.zabbix.com/zabbix/3.0/ubuntu/pool/main/z/zabbix-release/zabbix-release_3.0-1+trusty_all.deb
+
+#Executar o comando de instalação:
+dpkg -i zabbix-release_3.0-1+trusty_all.deb
+
+#Atualizar pacotes:
+apt-get update
+
+#Para instalar a interface Web do Zabbix:
+sudo apt-get install zabbix-server-mysql zabbix-frontend-php
+
+#Copie o arquivo de configuração do zabbix para o diretório do apache:
+sudo cp /etc/zabbix/apache.conf/etc/apache2/sites-enabled/zabbix.conf
+
+Agora, você precisa editar o arquivo de configuração para configurar o fuso horário de Fortaleza:
+sudo vi /etc/apache2/sites-enabled/zabbix.conf 
+php_value date.timezone America/Fortaleza
+
+#Salve e saia do arquivo.
+
+#Reinicie o Apache:
+sudo service apache2 restart
+
+Agora, você precisa configurar o servidor da interface web. Acesse o endereço abaixo e siga as instruções.
+http://server-ip/zabbix
+
+Use o usuário e senha padrão
+(respectivamente): Admin e zabbix
+
+############### CONFIGURAÇÃO DE REDE DAS MÁQUINAS VIRTUAIS ###############
+
+Arquivo /etc/network/interfaces
+
 #CONTROLADOR/OPENVSWITCH
 auto eth0
 iface eth0 inet static

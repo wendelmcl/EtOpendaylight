@@ -1,0 +1,68 @@
+############### CONFIGURAÇÃO DAS MÁQUINAS VIRTUAIS ###############
+
+CONTROLADOR/OPENVSWITCH - UBUNTU 14.04 BITS DESKTOP
+
+GATEWAY 1 - UBUNTU 14.04 64 BITS SERVER
+GATEWAY 2 - UBUNTU 14.04 64 BITS SERVER
+
+CLIENTE 1 - UBUNTU 14.04 64 BITS DESKTOP
+CLIENTE 2 - UBUNTU 14.04 64 BITS DESKTOP
+CLIENTE 3 - UBUNTU 14.04 64 BITS DESKTOP
+
+
+############### CONFIGURAÇÃO DE REDE DAS MÁQUINAS VIRTUAIS ###############
+
+Arquivo /etc/network/interfaces
+
+#CONTROLADOR/OPENVSWITCH
+auto eth0
+iface eth0 inet static
+address 192.168.2.2
+netmask 255.255.255.0
+
+
+#GATEWAY 1
+auto eth0
+iface eth0 inet dhcp
+
+auto eth1
+iface eth1 inet static
+address 192.168.2.3
+netmask 255.255.255.0
+
+
+#GATEWAY2
+auto eth0
+iface eth0 inet dhcp
+
+auto eth1
+iface eth1 inet static
+address 192.168.2.4
+netmask 255.255.255.0
+
+
+#CLIENTE 1
+auto eth0
+iface eth0 inet static
+address 192.168.2.5
+netmask 255.255.255.0
+gateway 192.168.2.2
+dns-nameservers 8.8.8.8
+
+#CLIENTE 2
+auto eth0
+iface eth0 inet static
+address 192.168.2.6
+netmask 255.255.255.0
+gateway 192.168.2.2
+dns-nameservers 8.8.8.8
+
+#CLIENTE 3
+auto eth0
+iface eth0 inet static
+address 192.168.2.7
+netmask 255.255.255.0
+gateway 192.168.2.2
+dns-nameservers 8.8.8.8
+
+
