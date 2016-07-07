@@ -1,4 +1,4 @@
-<!--Arquivo com as Regras-->
+<!--Arquivo de Regras-->
 <?xml version="1.0" ?>
 <flow xmlns="urn:opendaylight:flow:inventory">
 <id>7</id>

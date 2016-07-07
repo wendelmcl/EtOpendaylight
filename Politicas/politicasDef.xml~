@@ -1,4 +1,4 @@
-<!--Arquivo com as políticas Default dos Fluxo-->
+<!--Arquivo com as políticas Default-->
 <?xml version="1.0" ?>
 <policies>
 	<policy id="default1">

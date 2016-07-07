@@ -708,5 +708,4 @@ time.sleep(2)
 #Chama a função criarXML para criar os fluxos automáticamente.
 conecta = conectaBanco()
 criarXML(conecta)
-#Após criar os fluxos automaticamente, é chamada a função referente as opções do usuário.
 opcaoUsuario()
