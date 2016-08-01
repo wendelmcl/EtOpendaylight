@@ -83,7 +83,7 @@ def opcaoUsuario():
 
     elif opcao == 3:
         conecta = conectaBanco()
-        criarXML2(conecta)
+        opcaoFluxo(conecta)
 
     elif opcao==4:
         os.system('sudo ovs-ofctl -O Openflow13 dump-flows br0')
@@ -297,7 +297,7 @@ def deletarGateway(conecta):
 ####################CRIAR XML#########################
 
 #Função para criar o .XML com as regras dos fluxos.
-def criarXML(conecta):
+def criarXMLRegras(conecta):
     global i
     doc = parse('politicas.xml')
     xml = doc.documentElement
@@ -482,9 +482,9 @@ def criarXML(conecta):
 	#getinfo must be called before close.
         i=i+1   
 
-####################CRIAR DEFAULT#########################
+####################CRIAR FLUXO DEFAULT#########################
 
-def criarDefault(conecta):
+def criarFluxoDefault(conecta):
     global j
     doc = parse('politicasDef.xml')
     xml = doc.documentElement
@@ -529,12 +529,12 @@ def criarDefault(conecta):
 
 ####################CRIAR XML2#########################
 
-def criarXML2(conecta):
+def opcaoFluxo(conecta):
     doc = parse('politicas.xml')
     xml = doc.documentElement
     policy=xml.getElementsByTagName('policy')
     cursor = conecta.cursor()
-    fs=raw_input("Digite sua opção:\n 1 - Para inserir fluxo:\n 2 - Para criar fluxo default:\n 3 - para Voltar: \n")
+    fs=raw_input("Digite sua opção:\n 1 - Para inserir fluxo manualmente:\n 2 - Para criar fluxo default:\n 3 - para Voltar: \n")
     if fs=="1":
         print "Lista de Clientes: \n"
         cursor = conecta.cursor()
@@ -698,7 +698,7 @@ def criarXML2(conecta):
         opcaoUsuario()
     elif fs=="2":
 	conecta = conectaBanco()
-	criarDefault(conecta)
+	criarFluxoDefault(conecta)
         opcaoUsuario()
     elif fs=="3":
         opcaoUsuario()
@@ -707,5 +707,6 @@ def criarXML2(conecta):
 time.sleep(2)
 #Chama a função criarXML para criar os fluxos automáticamente.
 conecta = conectaBanco()
-criarXML(conecta)
+criarXMLRegras(conecta)
+#Após criar os fluxos automaticamente, é chamada a função referente as opções do usuário.
 opcaoUsuario()

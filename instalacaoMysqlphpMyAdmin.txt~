@@ -1,0 +1,26 @@
+###############INSTALAÇÃO DO MYSQL###############
+
+sudo apt-get update
+sudo apt-get install mysql-server mysql-client
+
+configure uma senha de administrador.
+
+###############INSTALAÇÃO DO phpMyAdmin###############
+
+sudo apt-get update
+sudo apt-get install phpmyadmin
+
+Escolha o servidor WEB apache.
+Selecione SIM para utilizar dbconfig-common para configurar o banco de dados.
+Digite a senha de administrador do Banco.
+Será solicitada uma senha para aplicação do phpMyAdmin.
+
+
+sudo php5enmod mcrypt
+
+Reiniciar o Apache.
+
+sudo service apache2 restart
+
+Acessando a Interface WEB.
+http://domain_name_or_IP/phpmyadmin
